@@ -383,8 +383,8 @@ function initTypingEffect() {
             setTimeout(typeChar, isTag ? 0 : 50);
         }
     }
-    
-    setTimeout(typeChar, 1000);
+    typeChar();
+    // setTimeout(typeChar, 100);
 }
 
 // Parallax effect for gems
@@ -530,6 +530,7 @@ function init() {
     initButtonInteractions();
     initPlanSelection();
     initScrollProgress();
+    initTypingEffect();
     initUSPAnimations();
     initWaveAnimations();
     
@@ -546,7 +547,7 @@ function init() {
     // Add loading states and enhanced UX
     setTimeout(() => {
         document.body.classList.add('loaded');
-        initTypingEffect();
+        
     }, 500);
 }
 
