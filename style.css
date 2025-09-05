@@ -1554,11 +1554,11 @@ body {
   }
 
   .usp-cietec .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem; /* 2rem * 0.9 */
   }
 
   .usp-cietec .section-subtitle {
-    font-size: 1.1rem;
+    font-size: 0.99rem; /* 1.1rem * 0.9 */
     margin-bottom: 40px;
   }
 
@@ -1570,7 +1570,72 @@ body {
     width: 100%;
     justify-content: center;
     padding: 15px 30px;
-    font-size: 1rem;
+    font-size: 0.9rem; /* 1rem * 0.9 */
+  }
+
+  /* Tablet font size reduction - 10% smaller fonts */
+  .nav-logo span {
+    font-size: 1.35rem; /* 1.5rem * 0.9 */
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem; /* 1.25rem * 0.9 */
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3.6vw, 2.7rem); /* clamp(2rem, 4vw, 3rem) * 0.9 */
+  }
+
+  .section-subtitle {
+    font-size: 0.99rem; /* 1.1rem * 0.9 */
+  }
+
+  .benefit-card h3 {
+    font-size: 1.35rem; /* 1.5rem * 0.9 */
+  }
+
+  .materials-title {
+    font-size: 1.8rem; /* 2rem * 0.9 */
+  }
+
+  .book-info h4 {
+    font-size: 1.17rem; /* 1.3rem * 0.9 */
+  }
+
+  .usp-badge span {
+    font-size: 0.9rem; /* 1rem * 0.9 */
+  }
+
+  .usp-feature h3 {
+    font-size: 1.35rem; /* 1.5rem * 0.9 */
+  }
+
+  .usp-feature p {
+    font-size: 0.9rem; /* 1rem * 0.9 */
+  }
+
+  .stat-card h3 {
+    font-size: 0.99rem; /* 1.1rem * 0.9 */
+  }
+
+  .stat-card .stat-number {
+    font-size: 2.25rem; /* 2.5rem * 0.9 */
+  }
+
+  .stat-card .stat-progress {
+    font-size: 0.81rem; /* 0.9rem * 0.9 */
+  }
+
+  .faq-question {
+    font-size: 1.08rem; /* 1.2rem * 0.9 */
+  }
+
+  .newsletter h3 {
+    font-size: 1.35rem; /* 1.5rem * 0.9 */
+  }
+
+  .newsletter p {
+    font-size: 0.81rem; /* 0.9rem * 0.9 */
   }
 }
 
@@ -1588,7 +1653,7 @@ body {
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.8rem; /* 2rem * 0.9 */
   }
 
   .hero-stats {
@@ -1604,6 +1669,7 @@ body {
   .btn {
     width: 100%;
     justify-content: center;
+    font-size: 0.9rem; /* 1rem * 0.9 */
   }
 
   .benefit-card,
@@ -1638,7 +1704,84 @@ body {
   }
 
   .stat-number {
-    font-size: 1.6rem;
+    font-size: 1.44rem; /* 1.6rem * 0.9 */
+  }
+
+  /* Mobile font size reduction - 10% smaller fonts */
+  .nav-logo span {
+    font-size: 1.35rem; /* 1.5rem * 0.9 */
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem; /* 1.25rem * 0.9 */
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3.6vw, 2.7rem); /* clamp(2rem, 4vw, 3rem) * 0.9 */
+  }
+
+  .section-subtitle {
+    font-size: 0.99rem; /* 1.1rem * 0.9 */
+  }
+
+  .benefit-card h3 {
+    font-size: 1.35rem; /* 1.5rem * 0.9 */
+  }
+
+  .materials-title {
+    font-size: 1.8rem; /* 2rem * 0.9 */
+  }
+
+  .book-info h4 {
+    font-size: 1.17rem; /* 1.3rem * 0.9 */
+  }
+
+  .usp-badge span {
+    font-size: 0.9rem; /* 1rem * 0.9 */
+  }
+
+  .usp-cietec .section-title {
+    font-size: 1.8rem; /* 2rem * 0.9 - already reduced in existing media query */
+  }
+
+  .usp-cietec .section-subtitle {
+    font-size: 0.99rem; /* 1.1rem * 0.9 - already reduced in existing media query */
+  }
+
+  .usp-feature h3 {
+    font-size: 1.35rem; /* 1.5rem * 0.9 */
+  }
+
+  .usp-feature p {
+    font-size: 0.9rem; /* 1rem * 0.9 */
+  }
+
+  .stat-card h3 {
+    font-size: 0.99rem; /* 1.1rem * 0.9 */
+  }
+
+  .stat-card .stat-number {
+    font-size: 2.25rem; /* 2.5rem * 0.9 */
+  }
+
+  .stat-card .stat-progress {
+    font-size: 0.81rem; /* 0.9rem * 0.9 */
+  }
+
+  .btn-academic {
+    font-size: 0.9rem; /* 1rem * 0.9 - already reduced in existing media query */
+  }
+
+  .faq-question {
+    font-size: 1.08rem; /* 1.2rem * 0.9 */
+  }
+
+  .newsletter h3 {
+    font-size: 1.35rem; /* 1.5rem * 0.9 */
+  }
+
+  .newsletter p {
+    font-size: 0.81rem; /* 0.9rem * 0.9 */
   }
 }
 

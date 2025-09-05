@@ -1486,6 +1486,95 @@
     .achievement-stats {
         grid-template-columns: 1fr;
     }
+
+    /* Tablet font size reduction - 10% smaller fonts */
+    .speech-bubble h2 {
+        font-size: 1.62rem; /* 1.8rem * 0.9 */
+    }
+
+    .speech-bubble p {
+        font-size: 0.99rem; /* 1.1rem * 0.9 */
+    }
+
+    .highlight-text {
+        font-size: 0.99rem; /* 1.1rem * 0.9 */
+    }
+
+    .username {
+        font-size: 2.25rem; /* 2.5rem * 0.9 */
+    }
+
+    .user-title {
+        font-size: 1.08rem; /* 1.2rem * 0.9 */
+    }
+
+    .exp-label {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .level-text {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .next-level {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .stat-content h3 {
+        font-size: 0.99rem; /* 1.1rem * 0.9 */
+    }
+
+    .stat-number {
+        font-size: 2.25rem; /* 2.5rem * 0.9 */
+    }
+
+    .stat-progress {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .ranking-tips h3 {
+        font-size: 1.17rem; /* 1.3rem * 0.9 */
+    }
+
+    .tip-card p {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .position-number {
+        font-size: 1.8rem; /* 2rem * 0.9 */
+    }
+
+    .player-details h4 {
+        font-size: 1.08rem; /* 1.2rem * 0.9 */
+    }
+
+    .player-title {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .player-stats {
+        font-size: 0.765rem; /* 0.85rem * 0.9 */
+    }
+
+    .status-text {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .points-diff {
+        font-size: 0.9rem; /* 1rem * 0.9 */
+    }
+
+    .btn-mini {
+        font-size: 0.72rem; /* 0.8rem * 0.9 */
+    }
+
+    .achievement-info h3 {
+        font-size: 1.35rem; /* 1.5rem * 0.9 */
+    }
+
+    .achievement-description {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
 }
 
 @media (max-width: 480px) {
@@ -1504,7 +1593,7 @@
     }
     
     .nav-link {
-        font-size: 1.1rem;
+        font-size: 0.99rem; /* 1.1rem * 0.9 */
         padding: 10px 0;
     }
     
@@ -1517,11 +1606,11 @@
     }
     
     .speech-bubble h2 {
-        font-size: 1.4rem;
+        font-size: 1.26rem; /* 1.4rem * 0.9 */
     }
     
     .username {
-        font-size: 2rem;
+        font-size: 1.8rem; /* 2rem * 0.9 */
     }
     
     .btn-play-content {
@@ -1529,7 +1618,7 @@
     }
     
     .play-main-text {
-        font-size: 1.4rem;
+        font-size: 1.26rem; /* 1.4rem * 0.9 */
     }
     
     .achievements-container {
@@ -1547,11 +1636,11 @@
     }
     
     .achievement-info h3 {
-        font-size: 1.2rem;
+        font-size: 1.08rem; /* 1.2rem * 0.9 */
     }
     
     .achievement-description {
-        font-size: 0.9rem;
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
     }
     
     .stat-achievement {
@@ -1559,6 +1648,79 @@
     }
     
     .stat-content-achievement h3 {
-        font-size: 1.5rem;
+        font-size: 1.35rem; /* 1.5rem * 0.9 */
+    }
+
+    /* Mobile font size reduction - 10% smaller fonts */
+    .speech-bubble p {
+        font-size: 0.99rem; /* 1.1rem * 0.9 */
+    }
+
+    .highlight-text {
+        font-size: 0.99rem; /* 1.1rem * 0.9 */
+    }
+
+    .user-title {
+        font-size: 1.08rem; /* 1.2rem * 0.9 */
+    }
+
+    .exp-label {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .level-text {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .next-level {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .stat-content h3 {
+        font-size: 0.99rem; /* 1.1rem * 0.9 */
+    }
+
+    .stat-number {
+        font-size: 2.25rem; /* 2.5rem * 0.9 */
+    }
+
+    .stat-progress {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .ranking-tips h3 {
+        font-size: 1.17rem; /* 1.3rem * 0.9 */
+    }
+
+    .tip-card p {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .position-number {
+        font-size: 1.8rem; /* 2rem * 0.9 */
+    }
+
+    .player-details h4 {
+        font-size: 1.08rem; /* 1.2rem * 0.9 */
+    }
+
+    .player-title {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .player-stats {
+        font-size: 0.765rem; /* 0.85rem * 0.9 */
+    }
+
+    .status-text {
+        font-size: 0.81rem; /* 0.9rem * 0.9 */
+    }
+
+    .points-diff {
+        font-size: 0.9rem; /* 1rem * 0.9 */
+    }
+
+    .btn-mini {
+        font-size: 0.72rem; /* 0.8rem * 0.9 */
     }
 }

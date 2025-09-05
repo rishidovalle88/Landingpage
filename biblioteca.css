@@ -1020,7 +1020,7 @@
   }
 
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 1.8rem; /* 2rem * 0.9 */
   }
 
   .hero-stats {
@@ -1076,6 +1076,95 @@
   .floating-book {
     display: none;
   }
+
+  /* Tablet font size reduction - 10% smaller fonts */
+  .hero-text p {
+    font-size: 0.99rem; /* 1.1rem * 0.9 */
+  }
+
+  .stat .number {
+    font-size: 1.8rem; /* 2rem * 0.9 */
+  }
+
+  .stat .label {
+    font-size: 0.765rem; /* 0.85rem * 0.9 */
+  }
+
+  .search-input-container .fas.fa-search {
+    font-size: 0.99rem; /* 1.1rem * 0.9 */
+  }
+
+  #searchInput {
+    font-size: 0.81rem; /* 0.9rem * 0.9 */
+  }
+
+  .search-btn {
+    font-size: 0.72rem; /* 0.8rem * 0.9 */
+  }
+
+  .filter-title {
+    font-size: 0.9rem; /* 1rem * 0.9 */
+  }
+
+  .filter-btn {
+    font-size: 0.72rem; /* 0.8rem * 0.9 */
+  }
+
+  .dropdown-btn {
+    font-size: 0.72rem; /* 0.8rem * 0.9 */
+  }
+
+  .clear-filters-btn {
+    font-size: 0.765rem; /* 0.85rem * 0.9 */
+  }
+
+  .results-count {
+    font-size: 0.72rem; /* 0.8rem * 0.9 */
+  }
+
+  .section-header h2 {
+    font-size: 1.62rem; /* 1.8rem * 0.9 */
+  }
+
+  .book-title {
+    font-size: 0.9rem; /* 1rem * 0.9 */
+  }
+
+  .book-author {
+    font-size: 0.72rem; /* 0.8rem * 0.9 */
+  }
+
+  .book-meta {
+    font-size: 0.675rem; /* 0.75rem * 0.9 */
+  }
+
+  .tag {
+    font-size: 0.63rem; /* 0.7rem * 0.9 */
+  }
+
+  .modal-body .book-info h3 {
+    font-size: 1.35rem; /* 1.5rem * 0.9 */
+  }
+
+  .modal-body .book-author {
+    font-size: 0.9rem; /* 1rem * 0.9 */
+  }
+
+  .modal-body .book-meta {
+    font-size: 0.81rem; /* 0.9rem * 0.9 */
+  }
+
+  .modal-body .book-description p {
+    font-size: 0.81rem; /* 0.9rem * 0.9 */
+  }
+
+  .modal-body .tag {
+    font-size: 0.675rem; /* 0.75rem * 0.9 */
+  }
+
+  .action-btn {
+    font-size: 0.765rem; /* 0.85rem * 0.9 */
+  }
 }
 
 @media (max-width: 480px) {
@@ -1084,7 +1173,7 @@
   }
 
   .hero-text h1 {
-    font-size: 1.6rem;
+    font-size: 1.44rem; /* 1.6rem * 0.9 */
   }
 
   .search-input-container {
@@ -1104,5 +1193,94 @@
 
   .filter-group {
     padding: 15px;
+  }
+
+  /* Mobile font size reduction - 10% smaller fonts */
+  .hero-text p {
+    font-size: 0.99rem; /* 1.1rem * 0.9 */
+  }
+
+  .stat .number {
+    font-size: 1.8rem; /* 2rem * 0.9 */
+  }
+
+  .stat .label {
+    font-size: 0.765rem; /* 0.85rem * 0.9 */
+  }
+
+  .search-input-container .fas.fa-search {
+    font-size: 0.99rem; /* 1.1rem * 0.9 */
+  }
+
+  #searchInput {
+    font-size: 0.81rem; /* 0.9rem * 0.9 */
+  }
+
+  .search-btn {
+    font-size: 0.72rem; /* 0.8rem * 0.9 */
+  }
+
+  .filter-title {
+    font-size: 0.9rem; /* 1rem * 0.9 */
+  }
+
+  .filter-btn {
+    font-size: 0.72rem; /* 0.8rem * 0.9 */
+  }
+
+  .dropdown-btn {
+    font-size: 0.72rem; /* 0.8rem * 0.9 */
+  }
+
+  .clear-filters-btn {
+    font-size: 0.765rem; /* 0.85rem * 0.9 */
+  }
+
+  .results-count {
+    font-size: 0.72rem; /* 0.8rem * 0.9 */
+  }
+
+  .section-header h2 {
+    font-size: 1.62rem; /* 1.8rem * 0.9 */
+  }
+
+  .book-title {
+    font-size: 0.9rem; /* 1rem * 0.9 */
+  }
+
+  .book-author {
+    font-size: 0.72rem; /* 0.8rem * 0.9 */
+  }
+
+  .book-meta {
+    font-size: 0.675rem; /* 0.75rem * 0.9 */
+  }
+
+  .tag {
+    font-size: 0.63rem; /* 0.7rem * 0.9 */
+  }
+
+  .modal-body .book-info h3 {
+    font-size: 1.35rem; /* 1.5rem * 0.9 */
+  }
+
+  .modal-body .book-author {
+    font-size: 0.9rem; /* 1rem * 0.9 */
+  }
+
+  .modal-body .book-meta {
+    font-size: 0.81rem; /* 0.9rem * 0.9 */
+  }
+
+  .modal-body .book-description p {
+    font-size: 0.81rem; /* 0.9rem * 0.9 */
+  }
+
+  .modal-body .tag {
+    font-size: 0.675rem; /* 0.75rem * 0.9 */
+  }
+
+  .action-btn {
+    font-size: 0.765rem; /* 0.85rem * 0.9 */
   }
 }
