@@ -1,0 +1,410 @@
+/* Livro de Poluição dos Mares - Estilo para Crianças */
+
+.book-page {
+    background: linear-gradient(135deg, #87CEEB 0%, #B0E0E6 100%);
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.book-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 20px 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Capa do Livro */
+.book-cover-page {
+    background: linear-gradient(135deg, #006994 0%, #87CEEB 100%);
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 3px solid #FFF;
+    animation: bookFloat 6s ease-in-out infinite;
+}
+
+@keyframes bookFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.cover-illustration {
+    margin-bottom: 30px;
+}
+
+.book-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #FFF;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+    0%, 100% { text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); }
+    50% { text-shadow: 0 4px 25px rgba(255, 255, 255, 0.5); }
+}
+
+.book-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+}
+
+.start-reading-btn {
+    background: linear-gradient(135deg, #32CD32 0%, #228B22 100%);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+    box-shadow: 0 8px 25px rgba(50, 205, 50, 0.4);
+}
+
+.start-reading-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(50, 205, 50, 0.6);
+}
+
+/* Páginas do Livro */
+.book-page-content {
+    background: linear-gradient(135deg, #FFF 0%, #F0F8FF 100%);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border: 3px solid #87CEEB;
+    margin-bottom: 20px;
+    animation: pageSlideIn 0.5s ease-out;
+}
+
+@keyframes pageSlideIn {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #87CEEB;
+    padding-bottom: 20px;
+}
+
+.page-number {
+    background: #FFD700;
+    color: #006994;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.page-header h2 {
+    font-size: 2.2rem;
+    color: #006994;
+    margin: 0;
+    font-weight: 700;
+}
+
+.page-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.page-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #E0F6FF 0%, #87CEEB 100%);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid #006994;
+}
+
+.page-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #2F4F4F;
+}
+
+.page-text p {
+    margin-bottom: 15px;
+}
+
+.page-text strong {
+    color: #006994;
+    font-weight: 700;
+}
+
+.page-text ul {
+    margin: 20px 0;
+    padding-left: 0;
+}
+
+.page-text li {
+    list-style: none;
+    background: linear-gradient(135deg, #E6F3FF 0%, #CCE7FF 100%);
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border-left: 4px solid #32CD32;
+    font-weight: 500;
+}
+
+/* Seção de Vilões */
+.villain-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.villain-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F5 100%);
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #FF6B6B;
+}
+
+.villain-icon {
+    font-size: 2rem;
+    width: 50px;
+    text-align: center;
+}
+
+.villain-item h4 {
+    margin: 0 0 5px 0;
+    color: #DC143C;
+    font-weight: 600;
+}
+
+.villain-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #8B0000;
+}
+
+/* Ações do Herói */
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.action-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #E6FFE6 0%, #F0FFF0 100%);
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #32CD32;
+}
+
+.action-icon {
+    font-size: 2rem;
+    width: 50px;
+    text-align: center;
+}
+
+.action-item h4 {
+    margin: 0 0 5px 0;
+    color: #228B22;
+    font-weight: 600;
+}
+
+.action-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #006400;
+}
+
+/* Página Final */
+.final-illustration {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.completion-message {
+    text-align: center;
+}
+
+.completion-message h3 {
+    font-size: 2rem;
+    color: #006994;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.completion-message p {
+    font-size: 1.2rem;
+    color: #2F4F4F;
+    margin-bottom: 30px;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-restart, .btn-home {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #8B4513;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.btn-restart:hover, .btn-home:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+}
+
+/* Navegação do Livro */
+.book-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 30px;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, #006994 0%, #4682B4 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 105, 148, 0.4);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.page-indicator {
+    background: #FFD700;
+    color: #006994;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .book-container {
+        padding: 80px 15px 20px;
+    }
+    
+    .book-cover-page {
+        padding: 40px 20px;
+    }
+    
+    .book-title {
+        font-size: 2.2rem;
+    }
+    
+    .page-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .page-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .page-text {
+        font-size: 1rem;
+    }
+    
+    .book-navigation {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-restart, .btn-home {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-title {
+        font-size: 1.8rem;
+    }
+    
+    .book-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .start-reading-btn {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+    
+    .page-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .page-text {
+        font-size: 0.95rem;
+    }
+    
+    .villain-item, .action-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

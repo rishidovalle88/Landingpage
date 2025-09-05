@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os Heróis dos Oceanos - Livro Interativo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="livro-poluicao.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="book-page">
+    <!-- Menu de Navegação -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logoNovo.png" alt="Arkos Game Logo">
+                <span>Game Arkos</span>
+            </div>
+            <div class="nav-menu">
+                <ul class="nav-menu-content">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="biblioteca.html" class="nav-link">Biblioteca</a></li>
+                    <li><a href="progress.html" class="nav-link">Meu Progresso</a></li>
+                </ul>
+
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Container do Livro -->
+    <div class="book-container">
+        <!-- Capa do Livro -->
+        <div class="book-cover-page" id="coverPage">
+            <div class="book-content">
+                <div class="cover-illustration">
+                    <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#87CEEB" />
+                                <stop offset="100%" style="stop-color:#006994" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Ocean background -->
+                        <rect width="300" height="200" fill="url(#oceanGradient)" />
+
+                        <!-- Happy fish -->
+                        <g transform="translate(50, 80)">
+                            <ellipse cx="20" cy="15" rx="25" ry="15" fill="#FFD700" />
+                            <circle cx="30" cy="10" r="3" fill="#000" />
+                            <path d="M45,15 L55,5 L55,25 Z" fill="#FFD700" />
+                        </g>
+
+                        <!-- Sad fish with pollution -->
+                        <g transform="translate(200, 100)">
+                            <ellipse cx="20" cy="15" rx="25" ry="15" fill="#FFA500" />
+                            <circle cx="30" cy="10" r="3" fill="#000" />
+                            <path d="M15,18 Q20,22 25,18" stroke="#000" stroke-width="2" fill="none" />
+                            <rect x="35" y="25" width="8" height="15" fill="#8B4513" opacity="0.8" />
+                        </g>
+
+                        <circle cx="150" cy="250" r="40" fill="rgba(255,255,255,0.9)" />
+                        <text x="150" y="240" text-anchor="middle" font-family="Inter" font-weight="700" font-size="16"
+                            fill="#006994">OS HERÓIS</text>
+                        <text x="150" y="260" text-anchor="middle" font-family="Inter" font-weight="700" font-size="16"
+                            fill="#006994">DOS OCEANOS</text>
+                    </svg>
+                </div>
+                <h1 class="book-title">Os Heróis dos Oceanos</h1>
+                <p class="book-subtitle">Uma aventura para salvar nossos mares</p>
+                <button class="start-reading-btn" onclick="nextPage()">
+                    <i class="fas fa-book-open"></i>
+                    Começar a Ler
+                </button>
+            </div>
+        </div>
+
+        <!-- Página 1 -->
+        <div class="book-page-content" id="page1" style="display: none;">
+            <div class="page-header">
+                <span class="page-number">Página 1</span>
+                <h2>Conhecendo Nossos Oceanos</h2>
+            </div>
+            <div class="page-content">
+                <div class="page-illustration">
+                    <svg width="250" height="180" viewBox="0 0 250 180" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="250" height="180" fill="#87CEEB" />
+                        <g transform="translate(30, 50)">
+                            <ellipse cx="15" cy="10" rx="20" ry="12" fill="#FF6B6B" />
+                            <circle cx="22" cy="7" r="2" fill="#000" />
+                        </g>
+                        <g transform="translate(150, 80)">
+                            <ellipse cx="15" cy="10" rx="18" ry="10" fill="#32CD32" />
+                            <circle cx="22" cy="7" r="2" fill="#000" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="page-text">
+                    <p>Olá, pequeno explorador! 🌊</p>
+                    <p>Você sabia que nossos oceanos são a casa de milhões de animais marinhos incríveis?</p>
+                    <p>Os oceanos cobrem mais de 70% do nosso planeta e são muito importantes para todos nós.</p>
+                    <p><strong>Mas nossos amigos do mar precisam da nossa ajuda!</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página 2 -->
+        <div class="book-page-content" id="page2" style="display: none;">
+            <div class="page-header">
+                <span class="page-number">Página 2</span>
+                <h2>O Problema da Poluição</h2>
+            </div>
+            <div class="page-content">
+                <div class="page-illustration">
+                    <svg width="250" height="180" viewBox="0 0 250 180" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="250" height="180" fill="#4682B4" />
+                        <rect x="50" y="50" width="12" height="20" fill="#8B4513" opacity="0.8" />
+                        <path d="M150,30 Q160,25 170,30 L168,45 Q160,50 152,45 Z" fill="rgba(255,255,255,0.7)" />
+                        <g transform="translate(100, 120)">
+                            <ellipse cx="25" cy="20" rx="30" ry="20" fill="#228B22" />
+                            <circle cx="35" cy="15" r="2" fill="#000" />
+                            <path d="M30,22 Q35,26 40,22" stroke="#000" stroke-width="2" fill="none" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="page-text">
+                    <p>Infelizmente, os oceanos estão ficando sujos por causa da poluição. 😢</p>
+                    <p><strong>O que está poluindo nossos mares?</strong></p>
+                    <ul>
+                        <li>🍼 Garrafas plásticas</li>
+                        <li>🛍️ Sacolas plásticas</li>
+                        <li>🥤 Canudos e copos descartáveis</li>
+                        <li>🛢️ Óleo e produtos químicos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página 3 -->
+        <div class="book-page-content" id="page3" style="display: none;">
+            <div class="page-header">
+                <span class="page-number">Página 3</span>
+                <h2>Os Maiores Vilões da Poluição</h2>
+            </div>
+            <div class="page-content">
+                <div class="page-illustration">
+                    <svg width="250" height="180" viewBox="0 0 250 180" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="50" y="120" width="40" height="30" fill="#8B4513" />
+                        <rect x="60" y="100" width="8" height="20" fill="#696969" />
+                        <circle cx="64" cy="90" r="3" fill="#808080" opacity="0.7" />
+                        <g transform="translate(150, 50)">
+                            <rect x="0" y="0" width="15" height="25" fill="#8B4513" opacity="0.8" />
+                            <rect x="20" y="5" width="15" height="25" fill="#8B4513" opacity="0.8" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="page-text">
+                    <p><strong>Quem são os maiores vilões? 🦹‍♂️</strong></p>
+                    <div class="villain-list">
+                        <div class="villain-item">
+                            <span class="villain-icon">🏭</span>
+                            <div>
+                                <h4>Fábricas Poluentes</h4>
+                                <p>Despejam produtos químicos nos rios</p>
+                            </div>
+                        </div>
+                        <div class="villain-item">
+                            <span class="villain-icon">🍼</span>
+                            <div>
+                                <h4>Plástico Descartável</h4>
+                                <p>Demora centenas de anos para desaparecer!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página 4 -->
+        <div class="book-page-content" id="page4" style="display: none;">
+            <div class="page-header">
+                <span class="page-number">Página 4</span>
+                <h2>Seja um Herói dos Oceanos!</h2>
+            </div>
+            <div class="page-content">
+                <div class="page-illustration">
+                    <svg width="250" height="180" viewBox="0 0 250 180" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="250" height="180" fill="#87CEEB" />
+                        <g transform="translate(100, 50)">
+                            <circle cx="20" cy="20" r="12" fill="#FDBCB4" />
+                            <rect x="15" y="32" width="10" height="20" fill="#32CD32" />
+                            <path d="M10,35 Q5,45 30,35" fill="#FF6B6B" />
+                        </g>
+                        <g transform="translate(180, 80)">
+                            <ellipse cx="15" cy="10" rx="18" ry="10" fill="#FFD700" />
+                            <circle cx="22" cy="7" r="2" fill="#000" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="page-text">
+                    <p><strong>Você pode ser um Herói dos Oceanos! 🦸‍♀️🦸‍♂️</strong></p>
+                    <div class="hero-actions">
+                        <div class="action-item">
+                            <span class="action-icon">♻️</span>
+                            <h4>Recicle Sempre!</h4>
+                            <p>Separe o lixo corretamente</p>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-icon">🚯</span>
+                            <h4>Nunca Jogue Lixo no Chão</h4>
+                            <p>Sempre procure uma lixeira</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página Final -->
+        <div class="book-page-content" id="finalPage" style="display: none;">
+            <div class="page-header">
+                <h2>Parabéns, Herói dos Oceanos! 🎉</h2>
+            </div>
+            <div class="page-content">
+                <div class="final-illustration">
+                    <svg width="250" height="200" viewBox="0 0 250 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="250" height="200" fill="#00CED1" />
+                        <g transform="translate(100, 100)">
+                            <ellipse cx="20" cy="15" rx="25" ry="18" fill="#FFD700" />
+                            <circle cx="28" cy="10" r="3" fill="#000" />
+                            <path d="M18,18 Q23,14 28,18" stroke="#000" stroke-width="2" fill="none" />
+                        </g>
+                        <g transform="translate(130, 150)">
+                            <circle cx="20" cy="20" r="15" fill="#FFD700" />
+                            <text x="20" y="25" text-anchor="middle" font-size="12" fill="#000">🏆</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="completion-message">
+                    <h3>Você terminou a aventura!</h3>
+                    <p>Agora você sabe como proteger nossos oceanos!</p>
+
+                    <div class="navigation-buttons">
+                        <button class="btn-restart" onclick="restartBook()">Ler Novamente</button>
+                        <button class="btn-home" onclick="goHome()">Voltar ao Início</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles de Navegação -->
+        <div class="book-navigation">
+            <button class="nav-btn prev-btn" onclick="prevPage()" id="prevBtn" style="display: none;">
+                <i class="fas fa-chevron-left"></i>
+                Página Anterior
+            </button>
+
+            <div class="page-indicator">
+                <span id="currentPageNum">1</span> / <span id="totalPages">4</span>
+            </div>
+
+            <button class="nav-btn next-btn" onclick="nextPage()" id="nextBtn">
+                Próxima Página
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="livro-poluicao.js"></script>
+</body>
+
+</html>
