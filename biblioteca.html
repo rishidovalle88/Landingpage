@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual - Arkos Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="biblioteca.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="biblioteca-page">
+    <!-- Menu de Navegação -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logoNovo.png" alt="Arkos Game Logo">
+                <span>Game Arkos</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/index.html" class="nav-link">Início</a></li>
+                <li><a href="progress.html" class="nav-link">Meu Progresso</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Sidebar Toggle Button (Mobile) -->
+    <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-filter"></i>
+    </button>
+
+    <!-- Filtros e Busca -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="search-bar">
+                <div class="search-input-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Livros e autores">
+                    <button class="search-btn" aria-label="Buscar livros">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="filters-container">
+                <!-- Filtro 1: Todos os Livros -->
+                <div class="filter-group">
+                    <h3 class="filter-title">
+                        <i class="fas fa-book"></i>
+                        Todos os Livros
+                    </h3>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="todos">
+                            <div class="filter-checkbox"></div>
+                            <span>Todos</span>
+                        </button>
+                        <button class="filter-btn" data-filter="digitais">
+                            <div class="filter-checkbox"></div>
+                            <span>Digitais</span>
+                        </button>
+                        <button class="filter-btn" data-filter="novos">
+                            <div class="filter-checkbox"></div>
+                            <span>Novos</span>
+                        </button>
+                        <button class="filter-btn" data-filter="avaliados">
+                            <div class="filter-checkbox"></div>
+                            <span>Mais Bem Avaliados</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filtro 2: Cursos -->
+                <div class="filter-group">
+                    <h3 class="filter-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        Cursos
+                    </h3>
+                    <div class="filter-options">
+                        <div class="dropdown-filter">
+                            <button class="dropdown-btn" data-dropdown="educacao">
+                                <span>Educação Infantil</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-content" id="educacao">
+                                <button class="filter-btn" data-filter="infantil">
+                                    <div class="filter-checkbox"></div>
+                                    <span>Todos</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-filter">
+                            <button class="dropdown-btn" data-dropdown="fundamental1">
+                                <span>Fundamental 1</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-content" id="fundamental1">
+                                <button class="filter-btn" data-filter="1ano">
+                                    <div class="filter-checkbox"></div>
+                                    <span>1º Ano</span>
+                                </button>
+                                <button class="filter-btn" data-filter="2ano">
+                                    <div class="filter-checkbox"></div>
+                                    <span>2º Ano</span>
+                                </button>
+                                <button class="filter-btn" data-filter="3ano">
+                                    <div class="filter-checkbox"></div>
+                                    <span>3º Ano</span>
+                                </button>
+                                <button class="filter-btn" data-filter="4ano">
+                                    <div class="filter-checkbox"></div>
+                                    <span>4º Ano</span>
+                                </button>
+                                <button class="filter-btn" data-filter="5ano">
+                                    <div class="filter-checkbox"></div>
+                                    <span>5º Ano</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-filter">
+                            <button class="dropdown-btn" data-dropdown="fundamental2">
+                                <span>Fundamental 2</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-content" id="fundamental2">
+                                <button class="filter-btn" data-filter="6ano">
+                                    <div class="filter-checkbox"></div>
+                                    <span>6º Ano</span>
+                                </button>
+                                <button class="filter-btn" data-filter="7ano">
+                                    <div class="filter-checkbox"></div>
+                                    <span>7º Ano</span>
+                                </button>
+                                <button class="filter-btn" data-filter="8ano">
+                                    <div class="filter-checkbox"></div>
+                                    <span>8º Ano</span>
+                                </button>
+                                <button class="filter-btn" data-filter="9ano">
+                                    <div class="filter-checkbox"></div>
+                                    <span>9º Ano</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-filter">
+                            <button class="dropdown-btn" data-dropdown="medio">
+                                <span>Ensino Médio</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-content" id="medio">
+                                <button class="filter-btn" data-filter="1ano-medio">
+                                    <div class="filter-checkbox"></div>
+                                    <span>1º Ano</span>
+                                </button>
+                                <button class="filter-btn" data-filter="2ano-medio">
+                                    <div class="filter-checkbox"></div>
+                                    <span>2º Ano</span>
+                                </button>
+                                <button class="filter-btn" data-filter="3ano-medio">
+                                    <div class="filter-checkbox"></div>
+                                    <span>3º Ano</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-filter">
+                            <button class="dropdown-btn" data-dropdown="superior">
+                                <span>Ensino Superior</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-content" id="superior">
+                                <button class="filter-btn" data-filter="exatas">
+                                    <div class="filter-checkbox"></div>
+                                    <span>Exatas</span>
+                                </button>
+                                <button class="filter-btn" data-filter="humanas">
+                                    <div class="filter-checkbox"></div>
+                                    <span>Humanas</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filtro 3: Idiomas -->
+                <div class="filter-group">
+                    <h3 class="filter-title">
+                        <i class="fas fa-globe"></i>
+                        Idiomas
+                    </h3>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="portugues">
+                            <div class="filter-checkbox"></div>
+                            <span>Português</span>
+                        </button>
+                        <button class="filter-btn" data-filter="ingles">
+                            <div class="filter-checkbox"></div>
+                            <span>Inglês</span>
+                        </button>
+                        <button class="filter-btn" data-filter="espanhol">
+                            <div class="filter-checkbox"></div>
+                            <span>Espanhol</span>
+                        </button>
+                    </div>
+                    <br />
+                    <hr>
+                    <br />
+                    <h3 class="filter-title">
+                        <i class="fas fa-brain"></i>
+                        Nível
+                    </h3>
+                    <div class="filter-options">
+                        <button class="filter-btn" data-filter="iniciante">
+                            <div class="filter-checkbox"></div>
+                            <span>Iniciante</span>
+                        </button>
+                        <button class="filter-btn" data-filter="basico">
+                            <div class="filter-checkbox"></div>
+                            <span>Básico</span>
+                        </button>
+                        <button class="filter-btn active" data-filter="intermediario">
+                            <div class="filter-checkbox"></div>
+                            <span>Intermediário</span>
+                        </button>
+                        <button class="filter-btn" data-filter="avancado">
+                            <div class="filter-checkbox"></div>
+                            <span>Avançado</span>
+                        </button>
+                        <button class="filter-btn" data-filter="fluente">
+                            <div class="filter-checkbox"></div>
+                            <span>Fluente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão Limpar Filtros -->
+            <div class="filter-actions">
+                <button class="clear-filters-btn">
+                    <i class="fas fa-refresh"></i>
+                    Limpar Filtros
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Livros -->
+    <section class="books-grid-section">
+        <div class="container-biblioteca">
+            <div class="section-header">
+                <div>
+                    <h2>Livros Disponíveis</h2>
+                    <div class="results-count">
+                        <span id="resultsCount">Mostrando 247 livros</span>
+                    </div>
+                </div>
+
+                <div class="view-options">
+                    <button class="view-btn active" data-view="grid" aria-label="Visualização em grade">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="list" aria-label="Visualização em lista">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="books-grid" id="booksGrid">
+                <!-- Livros serão carregados dinamicamente -->
+            </div>
+
+            <!-- Loading e Paginação -->
+            <div class="loading-container" id="loadingContainer">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>Carregando mais livros...</span>
+                </div>
+            </div>
+
+            <div class="pagination-container" id="paginationContainer">
+                <button class="pagination-btn" id="loadMoreBtn">
+                    <i class="fas fa-plus"></i>
+                    Carregar Mais Livros
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Livro -->
+    <div class="book-modal" id="bookModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Fechar modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="book-cover">
+                    <img id="modalBookCover" src="" alt="Capa do Livro">
+                    <div class="book-actions">
+                        <button class="action-btn primary">
+                            <i class="fas fa-book-open"></i>
+                            Ler Agora
+                        </button>
+                        <button class="action-btn secondary">
+                            <i class="fas fa-gamepad"></i>
+                            Fazer Quiz
+                        </button>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <h3 id="modalBookTitle"></h3>
+                    <p class="book-author" id="modalBookAuthor"></p>
+                    <div class="book-meta">
+                        <span class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <span id="modalBookRating">4.5</span>
+                        </span>
+                        <span class="book-pages" id="modalBookPages">245 páginas</span>
+                        <span class="book-level" id="modalBookLevel">Intermediário</span>
+                    </div>
+                    <div class="book-description">
+                        <p id="modalBookDescription"></p>
+                    </div>
+                    <div class="book-tags">
+                        <span class="tag">Ficção</span>
+                        <span class="tag">Aventura</span>
+                        <span class="tag">Jovem</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="biblioteca.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+
+</html>

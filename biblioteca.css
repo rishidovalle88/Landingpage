@@ -1,0 +1,1027 @@
+.nav-container {
+    justify-content: space-between !important;
+}
+
+.container-biblioteca {
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-top: 2.5rem;
+}
+
+/* Biblioteca Page Specific Styles */
+.biblioteca-page {
+    background: linear-gradient(135deg, #046a84 0%, #192f21 100%);
+    min-height: 100vh;
+    font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+/* Hero Section */
+.biblioteca-hero {
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(0, 152, 63, 0.1) 0%, rgba(4, 106, 132, 0.05) 100%);
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.floating-books-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floating-book {
+    position: absolute;
+    opacity: 0.3;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.floating-book-1 {
+    top: 15%;
+    left: 10%;
+    animation-name: floatBook1;
+    animation-delay: 0s;
+}
+
+.floating-book-2 {
+    top: 60%;
+    right: 15%;
+    animation-name: floatBook2;
+    animation-delay: 5s;
+}
+
+.floating-book-3 {
+    bottom: 20%;
+    left: 15%;
+    animation-name: floatBook3;
+    animation-delay: 10s;
+}
+
+@keyframes floatBook1 {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateY(-30px) rotate(10deg);
+        opacity: 0.4;
+    }
+}
+
+@keyframes floatBook2 {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.25;
+    }
+    50% {
+        transform: translateY(-25px) rotate(-8deg);
+        opacity: 0.45;
+    }
+}
+
+@keyframes floatBook3 {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(-35px) rotate(12deg);
+        opacity: 0.5;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat .number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ece21c;
+    text-shadow: 0 2px 10px rgba(236, 226, 28, 0.4);
+}
+
+.stat .label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+/* Filters Section - Netflix Style Sidebar */
+.filters-section {
+    position: fixed;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    background: rgba(25, 47, 33, 0.95);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    padding: 30px 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 4px 0 30px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+/* Modern Scrollbar for Sidebar */
+.filters-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.filters-section::-webkit-scrollbar-track {
+    background: rgba(25, 47, 33, 0.3);
+    border-radius: 4px;
+}
+
+.filters-section::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #00983f 0%, #046a84 100%);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.filters-section::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ece21c 0%, #c66320 100%);
+    box-shadow: 0 2px 8px rgba(236, 226, 28, 0.4);
+}
+
+.filters-section::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, #c66320 0%, #ece21c 100%);
+}
+
+/* Firefox Scrollbar */
+.filters-section {
+    scrollbar-width: thin;
+    scrollbar-color: #00983f rgba(25, 47, 33, 0.3);
+}
+
+.search-bar {
+    margin-bottom: 30px;
+}
+
+.search-input-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 12px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.search-input-container:focus-within {
+    border-color: #00983f;
+    box-shadow: 0 5px 20px rgba(0, 152, 63, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.search-input-container .fas.fa-search {
+    color: #f5f5f5;
+    font-size: 1.1rem;
+}
+
+.search-input-container > .fas.fa-search {
+    color: rgba(255, 255, 255, 0.7);    
+    margin-right: 12px;
+    font-size: 1rem;
+}
+
+#searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #ffffff;
+    background: transparent;
+}
+
+#searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.search-btn {
+    background: linear-gradient(135deg, #00983f 0%, #046a84 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+}
+
+.search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 152, 63, 0.4);
+}
+
+/* Filter Groups */
+.filters-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.filter-group {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.filter-group:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 152, 63, 0.3);
+}
+
+.filter-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.filter-title .fas {
+    color: #ece21c;
+    font-size: 1rem;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-btn:hover {
+    background: rgba(0, 152, 63, 0.2);
+    border-color: #00983f;
+    color: #ffffff;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #00983f 0%, #046a84 100%);
+    color: white;
+    border-color: #00983f;
+    box-shadow: 0 2px 10px rgba(0, 152, 63, 0.4);
+}
+
+.filter-btn .filter-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active .filter-checkbox {
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+.filter-btn.active .filter-checkbox::after {
+    content: '✓';
+    color: #00983f;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Dropdown Filters */
+.dropdown-filter {
+    position: relative;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.dropdown-btn {
+    width: 100%;
+    background: rgba(236, 226, 28, 0.15);
+    color: #ece21c;
+    border: 1px solid rgba(236, 226, 28, 0.3);
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-btn:hover {
+    background: rgba(236, 226, 28, 0.25);
+    border-color: #ece21c;
+    color: #ffffff;
+}
+
+.dropdown-btn.active {
+    background: rgba(236, 226, 28, 0.3);
+    border-color: #ece21c;
+    color: #ffffff;
+}
+
+.dropdown-btn .fas {
+    transition: transform 0.3s ease;
+}
+
+.dropdown-btn.active .fas {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(25, 47, 33, 0.95);
+    border: 1px solid rgba(236, 226, 28, 0.3);
+    border-radius: 8px;
+    margin-top: 5px;
+    padding: 8px;
+    display: none;
+    z-index: 200;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.dropdown-content.active {
+    display: block;
+    animation: dropdownSlide 0.3s ease;
+}
+
+@keyframes dropdownSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-content .filter-btn {
+    width: 100%;
+    margin-bottom: 4px;
+    justify-content: flex-start;
+    padding: 8px 12px;
+}
+
+/* Filter Actions */
+.filter-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.clear-filters-btn {
+    background: linear-gradient(135deg, #c66320 0%, #ece21c 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.clear-filters-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(198, 99, 32, 0.4);
+}
+
+.results-count {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+/* Main Content Adjustment */
+.books-grid-section {
+    margin-left: 250px;
+    padding: 60px 40px 60px 60px;
+    background: linear-gradient(135deg, rgba(25, 47, 33, 0.05) 0%, rgba(4, 106, 132, 0.03) 100%);
+}
+
+/* Mobile Sidebar Toggle */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 90px;
+    left: 20px;
+    z-index: 2000;
+    background: rgba(0, 152, 63, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.sidebar-toggle:hover {
+    background: rgba(0, 152, 63, 1);
+    transform: scale(1.1);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #f5f5f5;
+}
+
+.view-options {
+    display: flex;
+    gap: 10px;
+}
+
+.view-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 152, 63, 0.2);
+    border-radius: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #046a84;
+}
+
+.view-btn:hover {
+    background: rgba(0, 152, 63, 0.1);
+    border-color: #00983f;
+}
+
+.view-btn.active {
+    background: #00983f;
+    color: white;
+    border-color: #00983f;
+}
+
+/* Books Grid */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.book-card {
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.book-cover {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(135deg, #00983f 0%, #046a84 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover .book-cover img {
+    transform: scale(1.05);
+}
+
+.book-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 152, 63, 0.8) 0%, rgba(4, 106, 132, 0.8) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.book-card:hover .book-overlay {
+    opacity: 1;
+}
+
+.book-overlay .play-btn {
+    background: rgba(255, 255, 255, 0.9);
+    color: #00983f;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-overlay .play-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.book-info {
+    padding: 20px;
+}
+
+.book-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #192f21;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.book-author {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.book-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+}
+
+.book-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #ece21c;
+}
+
+.book-pages,
+.book-level {
+    color: #6b7280;
+}
+
+.book-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    background: rgba(0, 152, 63, 0.1);
+    color: #00983f;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Loading and Pagination */
+.loading-container {
+    text-align: center;
+    padding: 40px 0;
+    display: none;
+}
+
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: #00983f;
+}
+
+.loading-spinner .fas {
+    font-size: 2rem;
+}
+
+.pagination-container {
+    text-align: center;
+    padding: 40px 0;
+}
+
+#loadMoreBtn {
+    background: linear-gradient(135deg, #00983f 0%, #046a84 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+#loadMoreBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 152, 63, 0.4);
+}
+
+/* Book Modal */
+.book-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+}
+
+.book-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 20px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlide 0.3s ease;
+}
+
+@keyframes modalSlide {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.modal-body {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+}
+
+.modal-body .book-cover {
+    width: 250px;
+    height: 350px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    position: relative;
+}
+
+.modal-body .book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.book-actions {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-btn {
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    font-size: 0.95rem;
+}
+
+.action-btn.primary {
+    background: linear-gradient(135deg, #00983f 0%, #046a84 100%);
+    color: white;
+}
+
+.action-btn.secondary {
+    background: linear-gradient(135deg, #ece21c 0%, #c66320 100%);
+    color: white;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.book-info {
+    flex: 1;
+}
+
+.modal-body .book-info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #192f21;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.modal-body .book-author {
+    color: #6b7280;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.modal-body .book-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+.modal-body .book-rating {
+    font-weight: 600;
+}
+
+.book-description {
+    margin-bottom: 25px;
+}
+
+.book-description p {
+    color: #4b5563;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.modal-body .book-tags {
+    gap: 8px;
+}
+
+.modal-body .tag {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .filters-section {
+        transform: translateX(-100%);
+    }
+    
+    .filters-section.active {
+        transform: translateX(0);
+    }
+    
+    .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .books-grid-section {
+        margin-left: 0;
+        padding: 60px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters-section {
+        width: 280px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .hero-stats .stat {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .modal-body {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .modal-body .book-cover {
+        width: 100%;
+        height: 300px;
+        align-self: center;
+        max-width: 200px;
+    }
+
+    .floating-book {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .filters-section {
+        width: 260px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .search-input-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .search-btn {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-group {
+        padding: 15px;
+    }
+}
