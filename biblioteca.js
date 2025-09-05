@@ -188,6 +188,7 @@ function initializeBiblioteca() {
 function initializeSearch() {
     const searchInput = document.getElementById('searchInput');
     // const searchBtn = document.querySelector('.search-btn');
+    //
     
     let searchTimeout;
     
