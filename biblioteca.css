@@ -1093,7 +1093,7 @@
   }
 
   .search-input-container {
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
     padding: 20px;
   }
