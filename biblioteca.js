@@ -187,7 +187,7 @@ function initializeBiblioteca() {
 
 function initializeSearch() {
     const searchInput = document.getElementById('searchInput');
-    const searchBtn = document.querySelector('.search-btn');
+    // const searchBtn = document.querySelector('.search-btn');
     
     let searchTimeout;
     
@@ -200,11 +200,11 @@ function initializeSearch() {
         }, 300);
     });
     
-    searchBtn.addEventListener('click', function() {
-        currentFilters.search = searchInput.value.toLowerCase();
-        currentPage = 1;
-        loadBooks(true);
-    });
+    // searchBtn.addEventListener('click', function() {
+    //     currentFilters.search = searchInput.value.toLowerCase();
+    //     currentPage = 1;
+    //     loadBooks(true);
+    // });
     
     // Search on Enter key
     searchInput.addEventListener('keypress', function(e) {
