@@ -1624,9 +1624,10 @@ body.scrolled  {
 
 /* Footer */
 .footer {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-  color: white;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  color: #1f2937;
   padding: 60px 0 20px;
+  border-top: 1px solid rgba(50, 94, 50, 0.1);
 }
 
 .footer-content {
@@ -1646,11 +1647,11 @@ body.scrolled  {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 15px;
-  color: white;
+  color: #1f2937;
 }
 
 .footer-brand p {
-  color: #9ca3af;
+  color: #4b5563;
   line-height: 1.6;
 }
 
@@ -1658,7 +1659,7 @@ body.scrolled  {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 20px;
-  color: white;
+  color: #1f2937;
 }
 
 .footer-section ul {
@@ -1670,13 +1671,13 @@ body.scrolled  {
 }
 
 .footer-section a {
-  color: #9ca3af;
+  color: #6b7280;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: #4ade80;
+  color: #325e32;
 }
 
 .social-links {
@@ -1687,28 +1688,29 @@ body.scrolled  {
 .social-link {
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(50, 94, 50, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #325e32;
   transition: all 0.3s ease;
 }
 
 .social-link:hover {
-  background: linear-gradient(135deg, #4ade80, #22c55e);
+  background: linear-gradient(135deg, #325e32, #4ade80);
+  color: white;
   transform: translateY(-3px);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(107, 114, 128, 0.2);
 }
 
 .footer-bottom p {
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 /* Responsive Design */
