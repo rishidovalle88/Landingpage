@@ -15,6 +15,11 @@ body {
   color: #333;
   background-color: #f5f5f5;
   overflow-x: hidden;
+  background-image: url("images/wave.svg");
+  background-size: 80%;
+  /* background-position: center, center; */
+  background-repeat: repeat-x;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .container {
@@ -32,24 +37,26 @@ body {
   padding: 15px 0;
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 1000;
-  background-image: url("images/wave.svg");
-  background-size: 80%;
-  /* background-position: center, center; */
-  background-repeat: repeat-x;
 }
 
 .navbar.scrolled {
   height: 70px;
-  background: #62bd88, url("images/wave.svg");
-  /* background: white; */
-  background-size: 0%;
-  background-repeat: repeat-x;
+
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   box-shadow: 0 4px 30px rgba(0, 152, 63, 0.4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
+body.scrolled  {
+  background: #62bd88, url("images/wave.svg");
+  /* background: white; */
+  background-size: 0;
+  background-repeat: repeat-x;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 
 .navbar.scrolled .start-now-btn {
   display: block;
@@ -569,9 +576,9 @@ body {
   }
 }
 
-@media (max-width: 480px) {
-  .navbar {
-    background-size: 250%;
+@media (max-width: 592px) {
+  body {
+    background-size: 400px;
   }
 
   .navbar.scrolled .nav-menu {
@@ -1952,7 +1959,7 @@ body {
   }
 
   body {
-    background-size: 190%;
+    background-size: 300%;
   }
 
   .hero {

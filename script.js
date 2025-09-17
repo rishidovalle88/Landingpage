@@ -13,9 +13,11 @@ let isScrolling = false;
 
 // Navbar scroll effect
 function handleNavbarScroll() {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 70) {
+        document.body.classList.add('scrolled');
         navbar.classList.add('scrolled');
     } else {
+        document.body.classList.remove('scrolled');
         navbar.classList.remove('scrolled');
     }
 }
