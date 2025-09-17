@@ -40,9 +40,9 @@ body {
 
 .navbar.scrolled {
   height: 70px;
-  /* background: #62bd88, url("images/wave.svg"); */
-  background: white;
-  background-size: 120%;
+  background: #62bd88, url("images/wave.svg");
+  /* background: white; */
+  background-size: 0%;
   background-repeat: repeat-x;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
