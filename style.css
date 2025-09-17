@@ -586,6 +586,10 @@ body {
     display: none;
   }
 
+  .floating-books-overlay {
+    display: none;
+  }
+
   .navbar.scrolled .btn-primary {
     margin-top: 0.5rem;
   }
