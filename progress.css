@@ -34,13 +34,12 @@ body {
 }
 .trilha-container {
   display: flex;
-  justify-content: center;
   justify-content: space-between;
   align-items: center;
   transform: translate(0%, -92%);
 }
-.trilha-container > img {
-  width: 15rem;
+.trilha-fases> img {
+  width: 8rem;
 }
 
 .container {
