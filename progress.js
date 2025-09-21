@@ -1,528 +1,559 @@
-// Progress Page JavaScript
+// Progress Page JavaScript Functionality
+
+// Phase data with masters and details
+const phaseData = {
+    1: {
+        title: "Fase 1 - Iniciante",
+        masterName: "Mestre Gaia",
+        masterRole: "Guardiã da Terra",
+        masterImg: "https://api.dicebear.com/7.x/avataaars/svg?seed=master1&backgroundColor=c0aede",
+        description: "Bem-vindo à sua jornada de aprendizagem! Nesta primeira fase, você irá aprender os fundamentos básicos sobre meio ambiente e sustentabilidade. É hora de descobrir como pequenas ações podem fazer uma grande diferença!",
+        requirements: [
+            "Ler 3 livros sobre meio ambiente",
+            "Completar 5 quizzes básicos",
+            "Participar de 1 atividade prática"
+        ],
+        rewards: [
+            "Badge de Iniciante",
+            "250 pontos de experiência",
+            "Acesso à Fase 2"
+        ],
+        completed: true
+    },
+    2: {
+        title: "Fase 2 - Explorador",
+        masterName: "Mestre Aqua",
+        masterRole: "Guardião dos Oceanos",
+        masterImg: "https://api.dicebear.com/7.x/avataaars/svg?seed=master2&backgroundColor=b6e3f4",
+        description: "Agora que você domina o básico, é hora de explorar mais profundamente! Nesta fase, você irá mergulhar nos oceanos do conhecimento e descobrir os mistérios da vida marinha.",
+        requirements: [
+            "Ler 5 livros sobre oceanos",
+            "Completar 8 quizzes intermediários",
+            "Realizar 2 experimentos científicos"
+        ],
+        rewards: [
+            "Badge de Explorador",
+            "450 pontos de experiência",
+            "Equipamento especial",
+            "Acesso à Fase 3"
+        ],
+        completed: true
+    },
+    3: {
+        title: "Fase 3 - Aventureiro",
+        masterName: "Mestre Flora",
+        masterRole: "Guardiã das Florestas",
+        masterImg: "https://api.dicebear.com/7.x/avataaars/svg?seed=master3&backgroundColor=c6f6d5",
+        description: "Você está se tornando um verdadeiro aventureiro! Nesta fase, você irá explorar as florestas do conhecimento e aprender sobre biodiversidade, conservação e como proteger nosso planeta.",
+        requirements: [
+            "Ler 7 livros sobre biodiversidade",
+            "Completar 10 quizzes avançados",
+            "Liderar 1 projeto ambiental",
+            "Mentor 2 novos estudantes"
+        ],
+        rewards: [
+            "Badge de Aventureiro",
+            "600 pontos de experiência",
+            "Ferramentas avançadas",
+            "Acesso à Fase 4"
+        ],
+        completed: false,
+        current: true
+    },
+    4: {
+        title: "Fase 4 - Guardião",
+        masterName: "Mestre Ignis",
+        masterRole: "Guardião da Energia",
+        masterImg: "https://api.dicebear.com/7.x/avataaars/svg?seed=master4&backgroundColor=fed7d7",
+        description: "Como Guardião, você terá a responsabilidade de proteger e ensinar outros sobre sustentabilidade. Aprenda sobre energias renováveis e como liderar mudanças positivas.",
+        requirements: [
+            "Ler 10 livros especializados",
+            "Completar 15 desafios complexos",
+            "Criar 1 projeto inovador",
+            "Formar uma equipe de conservação"
+        ],
+        rewards: [
+            "Badge de Guardião",
+            "800 pontos de experiência",
+            "Título de Liderança",
+            "Acesso à Fase Final"
+        ],
+        completed: false,
+        current: false
+    },
+    5: {
+        title: "Fase 5 - Mestre",
+        masterName: "Mestre Cosmos",
+        masterRole: "Guardião Universal",
+        masterImg: "https://api.dicebear.com/7.x/avataaars/svg?seed=master5&backgroundColor=e9d5ff",
+        description: "Parabéns por chegar até aqui! Como Mestre, você se tornará um verdadeiro líder ambiental, capaz de inspirar e guiar outros em sua jornada de conservação.",
+        requirements: [
+            "Completar todas as fases anteriores",
+            "Ler 15 livros de mestrado",
+            "Liderar 5 projetos ambientais",
+            "Formar 10 novos guardiões"
+        ],
+        rewards: [
+            "Badge de Mestre Supremo",
+            "1000 pontos de experiência",
+            "Certificado de Liderança Ambiental",
+            "Acesso a conteúdo exclusivo"
+        ],
+        completed: false,
+        current: false
+    }
+};
+
+// Player data simulation
+const playerData = {
+    name: "João Silva",
+    fullName: "João Silva Santos",
+    school: "Escola Estadual Santos Dumont",
+    age: 15,
+    grade: "9º Ano - Ensino Fundamental",
+    registrationDate: "15 de março de 2024",
+    level: 15,
+    booksRead: 12,
+    totalScore: 2450,
+    playerAhead: "Maria Costa",
+    playerBehind: "Pedro Oliveira"
+};
+
+// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize progress page functionality
     initializeProgressPage();
 });
 
+// Main initialization function
 function initializeProgressPage() {
-    // Add navbar scroll effect
-    initializeNavbar();
-    
-    // Initialize interactive elements
-    initializePlayButton();
-    initializeQuickActions();
-    initializeRankingCards();
-    initializeStatCards();
-    initializeAchievements();
-    
-    // Add welcome animation
-    initializeWelcomeAnimation();
-    
-    // Initialize tooltips and hover effects
-    initializeTooltips();
+    setupPlayerProfile();
+    setupControlButtons();
+    setupPhaseNodes();
+    setupModals();
+    animateElements();
 }
 
-// Navbar functionality
-function initializeNavbar() {
-    const navbar = document.getElementById('navbar');
+// Setup player profile interactions
+function setupPlayerProfile() {
+    const playerProfile = document.getElementById('playerProfile');
+    const playerModal = document.getElementById('playerModal');
     
-    function updateNavbar() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    }
-    
-    window.addEventListener('scroll', updateNavbar);
-    updateNavbar();
-    
-    // Note: Mobile menu functionality is handled by script.js
-    // No need to duplicate mobile menu code here
-}
-
-// Play button interactions
-function initializePlayButton() {
-    const playButton = document.getElementById('playButton');
-    
-    if (playButton) {
-        playButton.addEventListener('click', function() {
-            // Add click animation
-            this.style.transform = 'translateY(-8px) scale(0.95)';
-            
-            setTimeout(() => {
-                this.style.transform = 'translateY(-8px) scale(1.05)';
-            }, 150);
-            
-            // Simulate starting game
-            showNotification('🎮 Iniciando sua aventura...', 'success');
-            
-            // Could redirect to game page or open game modal
-            setTimeout(() => {
-                console.log('Redirecting to game...');
-                // window.location.href = 'game.html';
-            }, 1500);
-        });
-        
-        // Add hover sound effect simulation
-        playButton.addEventListener('mouseenter', function() {
-            // Could play hover sound here
-            console.log('Play button hovered');
+    if (playerProfile && playerModal) {
+        playerProfile.addEventListener('click', function() {
+            openModal('playerModal');
         });
     }
 }
 
-// Quick action buttons
-function initializeQuickActions() {
-    const quickActionBtns = document.querySelectorAll('.quick-action-btn');
+// Setup control buttons functionality
+function setupControlButtons() {
+    const settingsBtn = document.getElementById('settingsBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
     
-    quickActionBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const action = this.getAttribute('data-action');
-            handleQuickAction(action);
-            
-            // Add click animation
-            this.style.transform = 'translateY(-8px) scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = 'translateY(-5px) scale(1)';
-            }, 150);
-        });
-    });
-}
-
-function handleQuickAction(action) {
-    switch(action) {
-        case 'daily-quiz':
-            showNotification('📚 Abrindo quiz diário...', 'info');
-            // Remove notification badge
-            const dailyBadge = document.querySelector('[data-action="daily-quiz"] .notification-badge');
-            if (dailyBadge) {
-                dailyBadge.style.display = 'none';
-            }
-            break;
-            
-        case 'continue-reading':
-            showNotification('📖 Continuando sua leitura...', 'info');
-            break;
-            
-        case 'challenges':
-            showNotification('🏆 Abrindo desafios...', 'info');
-            break;
-            
-        default:
-            console.log('Unknown action:', action);
-    }
-}
-
-// Ranking card interactions
-function initializeRankingCards() {
-    const rankingCards = document.querySelectorAll('.ranking-card');
-    
-    rankingCards.forEach(card => {
-        card.addEventListener('click', function() {
-            if (!this.classList.contains('current-player')) {
-                showPlayerProfile(this);
-            }
-        });
-    });
-    
-    // Challenge button
-    const challengeBtn = document.querySelector('.btn-mini.challenge');
-    if (challengeBtn) {
-        challengeBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            showNotification('⚔️ Desafio enviado para Maria Santos!', 'success');
-            
-            // Animate button
-            this.innerHTML = '<i class="fas fa-check"></i> Enviado';
-            this.style.background = 'linear-gradient(135deg, #00983f 0%, #046a84 100%)';
-            
-            setTimeout(() => {
-                this.innerHTML = '<i class="fas fa-sword"></i> Desafiar';
-                this.style.background = 'linear-gradient(135deg, #00983f 0%, #046a84 100%)';
-            }, 3000);
+    if (settingsBtn) {
+        settingsBtn.addEventListener('click', function() {
+            showNotification('Configurações em desenvolvimento!', 'info');
         });
     }
-}
-
-function showPlayerProfile(card) {
-    const playerName = card.querySelector('.player-details h4').textContent;
-    showNotification(`👤 Visualizando perfil de ${playerName}`, 'info');
     
-    // Could open a modal with player details
-    console.log('Show player profile for:', playerName);
-}
-
-// Achievements interactions
-function initializeAchievements() {
-    const achievementItems = document.querySelectorAll('.achievement-item');
-    
-    achievementItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const gemName = this.querySelector('h3').textContent;
-            const isConquered = this.classList.contains('conquered');
-            
-            if (isConquered) {
-                showAchievementDetails(this, gemName);
-            } else {
-                showAchievementProgress(this, gemName);
-            }
-        });
-        
-        // Add hover effect for gemstones
-        const gemImage = item.querySelector('.gemstone-img');
-        if (gemImage) {
-            item.addEventListener('mouseenter', function() {
-                if (this.classList.contains('conquered')) {
-                    gemImage.style.transform = 'scale(1.1) rotate(5deg)';
-                }
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                gemImage.style.transform = 'scale(1) rotate(0deg)';
-            });
-        }
-    });
-    
-    // Animate achievement progress bars on scroll
-    const progressBars = document.querySelectorAll('.achievement-progress .progress-fill');
-    
-    const animateAchievementBars = () => {
-        progressBars.forEach(bar => {
-            if (isElementInViewport(bar) && !bar.hasAttribute('data-animated')) {
-                bar.setAttribute('data-animated', 'true');
-                const width = bar.style.width;
-                bar.style.width = '0%';
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function() {
+            if (confirm('Tem certeza que deseja sair da plataforma?')) {
+                showNotification('Fazendo logout...', 'info');
+                // Simulate logout - in real app would redirect to login
                 setTimeout(() => {
-                    bar.style.width = width;
-                }, 200);
+                    window.location.href = 'index.html';
+                }, 1500);
             }
         });
-    };
-    
-    window.addEventListener('scroll', animateAchievementBars);
-    animateAchievementBars();
-}
-
-function showAchievementDetails(item, gemName) {
-    const date = item.querySelector('.achievement-date').textContent;
-    showNotification(`🏆 ${gemName} conquistado! ${date}`, 'success');
-    
-    // Add celebration animation
-    const glow = item.querySelector('.achievement-glow');
-    if (glow) {
-        glow.style.animation = 'glowPulse 0.5s ease-in-out 3';
-        setTimeout(() => {
-            glow.style.animation = 'glowPulse 2s ease-in-out infinite';
-        }, 1500);
     }
 }
 
-function showAchievementProgress(item, gemName) {
-    const progressText = item.querySelector('.progress-text');
-    const statusText = item.querySelector('.achievement-status span').textContent;
+// Setup phase node interactions
+function setupPhaseNodes() {
+    const phaseNodes = document.querySelectorAll('.phase-node');
     
-    if (progressText) {
-        const progress = progressText.textContent;
-        showNotification(`📈 ${gemName}: ${progress} - ${statusText}`, 'info');
-    } else {
-        showNotification(`🔒 ${gemName} ainda não está disponível`, 'warning');
-    }
-    
-    // Shake animation for locked achievements
-    if (statusText === 'Bloqueado') {
-        item.style.animation = 'shake 0.5s ease-in-out';
-        setTimeout(() => {
-            item.style.animation = 'none';
-        }, 500);
-    }
-}
-
-// Stat card animations
-function initializeStatCards() {
-    const statCards = document.querySelectorAll('.stat-card');
-    
-    // Animate numbers on scroll
-    const animateNumbers = () => {
-        statCards.forEach(card => {
-            const numberElement = card.querySelector('.stat-number');
-            const targetNumber = parseInt(numberElement.textContent.replace(/,/g, ''));
-            
-            if (isElementInViewport(card) && !card.hasAttribute('data-animated')) {
-                card.setAttribute('data-animated', 'true');
-                animateNumber(numberElement, 0, targetNumber, 2000);
-            }
-        });
-    };
-    
-    // Animate progress bars
-    const animateProgressBars = () => {
-        const progressBars = document.querySelectorAll('.exp-fill, .mini-progress-fill');
-        progressBars.forEach(bar => {
-            if (isElementInViewport(bar) && !bar.hasAttribute('data-animated')) {
-                bar.setAttribute('data-animated', 'true');
-                const width = bar.style.width;
-                bar.style.width = '0%';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 100);
-            }
-        });
-    };
-    
-    window.addEventListener('scroll', () => {
-        animateNumbers();
-        animateProgressBars();
-    });
-    
-    // Initial check
-    animateNumbers();
-    animateProgressBars();
-}
-
-// Welcome animation
-function initializeWelcomeAnimation() {
-    const dragon = document.querySelector('.dragon');
-    const speechBubble = document.querySelector('.speech-bubble');
-    
-    if (dragon) {
-        dragon.addEventListener('click', function() {
-            // Dragon click animation
-            this.style.transform = 'scale(1.2) rotate(10deg)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1) rotate(0deg)';
-            }, 300);
-            
-            // Show special message
-            showNotification('🐉 O dragão está feliz em vê-lo!', 'success');
-        });
-    }
-    
-    // Animate speech bubble on load
-    if (speechBubble) {
-        setTimeout(() => {
-            speechBubble.style.animation = 'bubbleFloat 4s ease-in-out infinite, bubbleEntrance 1s ease-out';
-        }, 500);
-    }
-}
-
-// Tooltip system
-function initializeTooltips() {
-    // Add tooltips to various elements
-    const tooltipElements = [
-        { selector: '.level-badge', text: 'Seu nível atual baseado na experiência' },
-        { selector: '.exp-fill', text: 'Barra de experiência - complete atividades para ganhar XP!' },
-        { selector: '.streak-indicator', text: 'Sequência de dias jogando consecutivamente' },
-        { selector: '.trend-positive', text: 'Tendência positiva - você está melhorando!' }
-    ];
-    
-    tooltipElements.forEach(item => {
-        const elements = document.querySelectorAll(item.selector);
-        elements.forEach(element => {
-            element.setAttribute('title', item.text);
-            element.style.cursor = 'help';
+    phaseNodes.forEach(node => {
+        node.addEventListener('click', function() {
+            const phaseNumber = parseInt(this.dataset.phase);
+            openPhaseModal(phaseNumber);
         });
     });
 }
 
-// Utility functions
-function animateNumber(element, start, end, duration) {
-    const increment = (end - start) / (duration / 16);
-    let current = start;
+// Setup modal functionality
+function setupModals() {
+    // Close buttons
+    const closeButtons = document.querySelectorAll('.modal-close');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            closeModal(modal.id);
+        });
+    });
     
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= end) {
-            current = end;
-            clearInterval(timer);
+    // Close on backdrop click
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal(this.id);
+            }
+        });
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const activeModal = document.querySelector('.modal.active');
+            if (activeModal) {
+                closeModal(activeModal.id);
+            }
         }
+    });
+}
+
+// Open modal function
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
         
-        // Format number with commas
-        const formatted = Math.floor(current).toLocaleString('pt-BR');
-        element.textContent = formatted;
-    }, 16);
+        // Add focus trap for accessibility
+        const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusableElements.length > 0) {
+            focusableElements[0].focus();
+        }
+    }
 }
 
-function isElementInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+// Close modal function
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
+// Open phase modal with specific phase data
+function openPhaseModal(phaseNumber) {
+    const phase = phaseData[phaseNumber];
+    if (!phase) return;
+    
+    // Update modal content
+    document.getElementById('phaseModalTitle').textContent = phase.title;
+    document.getElementById('phaseModalMasterImg').src = phase.masterImg;
+    document.getElementById('phaseModalMasterName').textContent = phase.masterName;
+    document.getElementById('phaseModalMasterRole').textContent = phase.masterRole;
+    document.getElementById('phaseModalDescription').textContent = phase.description;
+    
+    // Update requirements
+    const requirementsList = document.getElementById('phaseModalRequirements');
+    requirementsList.innerHTML = '';
+    phase.requirements.forEach(requirement => {
+        const li = document.createElement('li');
+        li.textContent = requirement;
+        requirementsList.appendChild(li);
+    });
+    
+    // Update rewards
+    const rewardsList = document.getElementById('phaseModalRewards');
+    rewardsList.innerHTML = '';
+    phase.rewards.forEach(reward => {
+        const span = document.createElement('span');
+        span.className = 'reward-item';
+        span.textContent = reward;
+        rewardsList.appendChild(span);
+    });
+    
+    openModal('phaseModal');
+}
+
+// Show notification function
 function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(notification => notification.remove());
+    
     // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.innerHTML = `
         <div class="notification-content">
             <span class="notification-message">${message}</span>
-            <button class="notification-close">&times;</button>
+            <button class="notification-close" onclick="this.parentElement.parentElement.remove()">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
     `;
     
-    // Add styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        z-index: 10000;
-        background: ${getNotificationColor(type)};
-        color: white;
-        padding: 15px 20px;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        max-width: 350px;
-        backdrop-filter: blur(10px);
-    `;
+    // Add notification styles if not already present
+    if (!document.querySelector('#notification-styles')) {
+        const styles = document.createElement('style');
+        styles.id = 'notification-styles';
+        styles.textContent = `
+            .notification {
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                z-index: 2000;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+                animation: slideInRight 0.3s ease;
+                max-width: 400px;
+            }
+            
+            .notification-info {
+                background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+                color: white;
+            }
+            
+            .notification-success {
+                background: linear-gradient(135deg, #4ade80, #22c55e);
+                color: white;
+            }
+            
+            .notification-warning {
+                background: linear-gradient(135deg, #fbbf24, #f59e0b);
+                color: white;
+            }
+            
+            .notification-error {
+                background: linear-gradient(135deg, #ef4444, #dc2626);
+                color: white;
+            }
+            
+            .notification-content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+            
+            .notification-message {
+                flex: 1;
+                font-weight: 500;
+            }
+            
+            .notification-close {
+                background: none;
+                border: none;
+                color: inherit;
+                cursor: pointer;
+                font-size: 1.2rem;
+                padding: 0;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transition: background-color 0.3s ease;
+            }
+            
+            .notification-close:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(styles);
+    }
     
     // Add to page
     document.body.appendChild(notification);
     
-    // Animate in
+    // Auto remove after 5 seconds
     setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 100);
-    
-    // Add close functionality
-    const closeBtn = notification.querySelector('.notification-close');
-    closeBtn.addEventListener('click', () => {
-        removeNotification(notification);
-    });
-    
-    // Auto remove after 4 seconds
-    setTimeout(() => {
-        removeNotification(notification);
-    }, 4000);
+        if (notification.parentElement) {
+            notification.remove();
+        }
+    }, 5000);
 }
 
-function getNotificationColor(type) {
-    const colors = {
-        'success': 'linear-gradient(135deg, #00983f 0%, #046a84 100%)',
-        'info': 'linear-gradient(135deg, #046a84 0%, #192f21 100%)',
-        'warning': 'linear-gradient(135deg, #ece21c 0%, #c66320 100%)',
-        'error': 'linear-gradient(135deg, #c66320 0%, #192f21 100%)'
+// Animate elements on scroll
+function animateElements() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
-    return colors[type] || colors.info;
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements that should animate
+    const animateElements = document.querySelectorAll('.phase-node, .stat-item, .welcome-dialog');
+    animateElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(element);
+    });
 }
 
-function removeNotification(notification) {
-    notification.style.transform = 'translateX(100%)';
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.parentNode.removeChild(notification);
-        }
-    }, 300);
+// Counter animation for statistics
+function animateNumbers() {
+    const counters = document.querySelectorAll('.stat-value');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.textContent.replace(/,/g, ''));
+        const duration = 2000; // 2 seconds
+        const step = target / (duration / 16); // 60fps
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            
+            // Format number with commas if needed
+            if (target > 999) {
+                counter.textContent = Math.floor(current).toLocaleString();
+            } else {
+                counter.textContent = Math.floor(current);
+            }
+        }, 16);
+    });
 }
 
-// Keyboard shortcuts
-document.addEventListener('keydown', function(e) {
-    // Press 'P' to start playing
-    if (e.key.toLowerCase() === 'p' && !e.ctrlKey && !e.altKey) {
-        const playButton = document.getElementById('playButton');
-        if (playButton) {
-            playButton.click();
+// Initialize number animation when the statistics section comes into view
+const statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateNumbers();
+            statsObserver.unobserve(entry.target);
         }
-    }
-    
-    // Press 'Q' for daily quiz
-    if (e.key.toLowerCase() === 'q' && !e.ctrlKey && !e.altKey) {
-        const quizBtn = document.querySelector('[data-action="daily-quiz"]');
-        if (quizBtn) {
-            quizBtn.click();
-        }
-    }
-    
-    // Press 'R' to continue reading
-    if (e.key.toLowerCase() === 'r' && !e.ctrlKey && !e.altKey) {
-        const readBtn = document.querySelector('[data-action="continue-reading"]');
-        if (readBtn) {
-            readBtn.click();
-        }
-    }
-    
-    // Press 'A' for achievements
-    if (e.key.toLowerCase() === 'a' && !e.ctrlKey && !e.altKey) {
-        const achievementsSection = document.getElementById('conquistas');
-        if (achievementsSection) {
-            achievementsSection.scrollIntoView({ behavior: 'smooth' });
-            showNotification('🏆 Navegando para Conquistas', 'info');
-        }
+    });
+}, { threshold: 0.5 });
+
+// Observe the player stats section
+document.addEventListener('DOMContentLoaded', function() {
+    const playerStats = document.querySelector('.player-stats');
+    if (playerStats) {
+        statsObserver.observe(playerStats);
     }
 });
 
-// Add CSS for notifications
-const notificationStyles = document.createElement('style');
-notificationStyles.textContent = `
-    .notification-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 15px;
+// Keyboard shortcuts
+document.addEventListener('keydown', function(e) {
+    // Alt + P to open player profile
+    if (e.altKey && e.key === 'p') {
+        e.preventDefault();
+        openModal('playerModal');
     }
     
-    .notification-message {
-        flex: 1;
-        font-weight: 500;
+    // Alt + S for settings
+    if (e.altKey && e.key === 's') {
+        e.preventDefault();
+        document.getElementById('settingsBtn').click();
     }
     
-    .notification-close {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.2rem;
-        cursor: pointer;
-        opacity: 0.8;
-        transition: opacity 0.3s ease;
-        width: 24px;
-        height: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    // Alt + L for logout
+    if (e.altKey && e.key === 'l') {
+        e.preventDefault();
+        document.getElementById('logoutBtn').click();
     }
-    
-    .notification-close:hover {
-        opacity: 1;
-    }
-    
-    @keyframes bubbleEntrance {
-        0% {
-            opacity: 0;
-            transform: translateY(20px) scale(0.8);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-    }
-`;
+});
 
-document.head.appendChild(notificationStyles);
+// Touch and drag support for trail on mobile
+let isDragging = false;
+let startX = 0;
+let scrollLeft = 0;
 
-// Performance optimization
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
+const trailContainer = document.querySelector('.trail-container');
+if (trailContainer) {
+    trailContainer.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        startX = e.pageX - trailContainer.offsetLeft;
+        scrollLeft = trailContainer.scrollLeft;
+        trailContainer.style.cursor = 'grabbing';
+    });
+    
+    trailContainer.addEventListener('mouseleave', function() {
+        isDragging = false;
+        trailContainer.style.cursor = 'grab';
+    });
+    
+    trailContainer.addEventListener('mouseup', function() {
+        isDragging = false;
+        trailContainer.style.cursor = 'grab';
+    });
+    
+    trailContainer.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - trailContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        trailContainer.scrollLeft = scrollLeft - walk;
+    });
+    
+    // Touch events for mobile
+    trailContainer.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].pageX - trailContainer.offsetLeft;
+        scrollLeft = trailContainer.scrollLeft;
+    });
+    
+    trailContainer.addEventListener('touchmove', function(e) {
+        const x = e.touches[0].pageX - trailContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        trailContainer.scrollLeft = scrollLeft - walk;
+    });
 }
 
-// Debounced scroll handler for better performance
-const debouncedScrollHandler = debounce(() => {
-    // Any scroll-related functionality can be added here
-}, 16); // ~60fps
+// Welcome message personalization
+function updateWelcomeMessage() {
+    const welcomeTitle = document.querySelector('.dialog-bubble h2');
+    const welcomeText = document.querySelector('.dialog-bubble p');
+    
+    if (welcomeTitle && welcomeText) {
+        const currentHour = new Date().getHours();
+        let greeting;
+        
+        if (currentHour < 12) {
+            greeting = "Bom dia";
+        } else if (currentHour < 18) {
+            greeting = "Boa tarde";
+        } else {
+            greeting = "Boa noite";
+        }
+        
+        welcomeTitle.textContent = `${greeting}, ${playerData.name}!`;
+        
+        const messages = [
+            "Que bom ter você aqui novamente! Continue sua jornada épica de aprendizagem e conquiste novos desafios. Você está indo muito bem!",
+            "Pronto para mais uma aventura de conhecimento? Seus progressos têm sido incríveis! Vamos continuar explorando juntos.",
+            "Sua dedicação ao aprendizado é inspiradora! Que tal descobrir mais sobre nosso planeta hoje?",
+            "Cada passo que você dá nos aproxima de um mundo mais sustentável. Continue assim, explorador!"
+        ];
+        
+        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        welcomeText.textContent = randomMessage;
+    }
+}
 
-window.addEventListener('scroll', debouncedScrollHandler);
+// Initialize welcome message when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(updateWelcomeMessage, 500);
+});
 
-console.log('Progress page initialized successfully! 🎮');
-console.log('Keyboard shortcuts: P (Play), Q (Quiz), R (Read), A (Achievements)');
+console.log('Progress page initialized successfully!');
