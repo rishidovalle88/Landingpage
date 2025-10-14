@@ -792,7 +792,7 @@ header {
 /* Responsive Progress Bar */
 @media (max-width: 768px) {
   .progress-info {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .current-stone,
@@ -839,5 +839,9 @@ header {
   .stone-points,
   .stone-points-needed {
     font-size: 1rem;
+  }
+
+  .progress-info-container {
+    transform: translateY(-10%);
   }
 }
