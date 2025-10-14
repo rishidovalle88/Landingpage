@@ -48,4 +48,50 @@ document.addEventListener('DOMContentLoaded', function() {
             card.style.transform = 'translateY(0)';
         }, 200 * index);
     });
+    
+    // Add animation to table rows
+    const tableRows = document.querySelectorAll('.quiz-table tbody tr');
+    
+    tableRows.forEach((row, index) => {
+        // Add a delay for each row to create a staggered animation effect
+        row.style.opacity = '0';
+        row.style.transform = 'translateY(10px)';
+        
+        setTimeout(() => {
+            row.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            row.style.opacity = '1';
+            row.style.transform = 'translateY(0)';
+        }, 100 * index);
+    });
+    
+    // Add animation to ranking cards
+    const rankingCards = document.querySelectorAll('.ranking-card');
+    
+    rankingCards.forEach((card, index) => {
+        // Add a delay for each card to create a staggered animation effect
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 150 * index);
+    });
+    
+    // Animate progress bar
+    const progressFill = document.querySelector('.progress-fill');
+    if (progressFill) {
+        // Store the final width
+        const finalWidth = progressFill.style.width;
+        
+        // Reset width to 0 for animation
+        progressFill.style.width = '0';
+        
+        // Animate to final width after a short delay
+        setTimeout(() => {
+            progressFill.style.transition = 'width 1.5s ease-in-out';
+            progressFill.style.width = finalWidth;
+        }, 300);
+    }
 });
